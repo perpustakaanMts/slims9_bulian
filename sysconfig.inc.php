@@ -39,7 +39,7 @@ if ($envExists) require $envFile;
  *
  * In production mode, the system error message will be disabled
  */
-define('ENVIRONMENT', $env??'unavailable');
+define('ENVIRONMENT', $env = 'production' ??);
 
 if (ENVIRONMENT === 'unavailable' && file_exists(__DIR__ . '/config/database.php') && php_sapi_name() !== 'cli') {
   header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
